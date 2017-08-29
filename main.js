@@ -5,8 +5,7 @@ var breedsArray = [];
 function dogsJSONConvert() {
 	var data = JSON.parse(this.responseText);
 	dogArray = data.dogs;
-	// console.log(dogArray);
-	addBreedsToDogs(dogArray);
+	console.log(dogArray);
 }
 
 function breedsJSONConvert() {
@@ -17,17 +16,6 @@ function breedsJSONConvert() {
 
 function executeThisCodeIfFileErrors() {
 	console.log("shit broke");
-}
-
-function addBreedsToDogs(dogs) {
-	dogArray.forEach(function(dogs){
-		for (var i=0; i < breedsArray.length; i++) {
-			if (dogs.breed-id === breedsArray[i].id) {
-				dogs.breedName = breedsArray[i].name;
-			}
-		}
-	});
-	console.log(dogArray);
 }
 
 var dogRequest = new XMLHttpRequest();
